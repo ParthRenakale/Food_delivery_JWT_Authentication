@@ -1,27 +1,22 @@
-MERN Stack Food Delivery App with JWT Authentication
+**MERN Stack Food Delivery App with JWT Authentication.**
 This is a MERN Stack (MongoDB, Express, React, Node.js) based Food Delivery App with JWT (JSON Web Token) Authentication. This app allows users to sign in, browse a list of food items, place orders, and view their personal accounts securely.
 
 The app also includes a feature to track the user's current location on the map using real-time GPS coordinates.
 
-Features
-User Authentication:
-
+**Features**
+**User Authentication:**
 Users can sign up, log in, and access a secure personal account page.
 JWT authentication ensures that each user’s personal page is protected and cannot be accessed directly through the URL by unauthorized users.
-Food Selection:
-
+**Food Selection:**
 After logging in, users are presented with a list of food items to choose from.
 Users can select their orders, which are stored in localStorage for later use.
 The stored orders can be used for bill calculation when the user is ready to checkout.
-Location Access:
-
+**Location Access:**
 The app includes a button that opens a modal with an integrated map showing the user's current location and live location.
 Real-time latitude and longitude are used to provide an accurate map visualization of the user's current position.
-Sign Out:
-
+**Sign Out:**
 Users can sign out at any time, which will end their session and redirect them to the login page.
-
-Tech Stack
+**Tech Stack:**
 Frontend: React.js
 Backend: Node.js, Express.js
 Database: MongoDB
@@ -29,7 +24,7 @@ Authentication: JSON Web Token (JWT)
 Map Integration: Google Maps API (for location visualization)
 State Management: React Context API / LocalStorage
 
-Features in Detail
+**Features in Detail**
 User Authentication
 Sign Up: Users can create an account by providing their details (e.g., name, email, password).
 Login: After signing up, users can log in with their credentials.
