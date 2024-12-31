@@ -1,0 +1,65 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords;
+      // Show a map centered at latitude / longitude.
+      document.getElementById('map').innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q=' + latitude + ',' + longitude + '&z=15&output=embed"></iframe>';
+    }, error => {
+      console.error("Error getting location: ", error);
+      alert("Unable to retrieve location.");
+    });
+  </script>
+</body>
+</html>
+
+
+const watchId = navigator.geolocation.watchPosition(position => {
+  const { latitude, longitude } = position.coords;
+  // Show a map centered at latitude / longitude.
+}); -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Map Display</title>
+</head>
+<body>
+  <h2>Current Location</h2>
+  <div id="current-map"></div>
+
+  <h2>Live Location Watch</h2>
+  <div id="watch-map"></div>
+
+  <script>
+    // Show the initial current location map
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords;
+      // Show a map centered at latitude / longitude for current location
+      document.getElementById('current-map').innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q=' + latitude + ',' + longitude + '&z=15&output=embed"></iframe>';
+
+      // Now, start watching the location updates
+      const watchId = navigator.geolocation.watchPosition(position => {
+        const { latitude, longitude } = position.coords;
+        // Show a map that updates as the position changes
+        document.getElementById('watch-map').innerHTML = '<iframe width="700" height="300" src="https://maps.google.com/maps?q=' + latitude + ',' + longitude + '&z=15&output=embed"></iframe>';
+      }, error => {
+        console.error("Error watching location: ", error);
+        alert("Unable to watch location.");
+      });
+    }, error => {
+      console.error("Error getting current location: ", error);
+      alert("Unable to retrieve location.");
+    });
+  </script>
+</body>
+</html>
